@@ -1,0 +1,28 @@
+{
+  "name": "fairgamesocket",
+  "version": "1.0.0",
+  "description": "for socket load balancing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singhkhushboo652/fairgameSocket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/singhkhushboo652/fairgameSocket/issues"
+  },
+  "homepage": "https://github.com/singhkhushboo652/fairgameSocket#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.2",
+    "node-localstorage": "^2.2.1",
+    "request": "^2.88.2",
+    "socket.io": "^4.6.1"
+  }
+}
