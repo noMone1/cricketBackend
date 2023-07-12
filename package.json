@@ -1,28 +1,37 @@
 {
-  "name": "fairgamesocket",
+  "name": "payroll",
   "version": "1.0.0",
-  "description": "for socket load balancing",
+  "description": "Backend server for automated payroll management and generation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "test": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/singhkhushboo652/fairgameSocket.git"
-  },
-  "author": "",
+  "author": "anupamtechsimians",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/singhkhushboo652/fairgameSocket/issues"
-  },
-  "homepage": "https://github.com/singhkhushboo652/fairgameSocket#readme",
   "dependencies": {
+    "aws-sdk": "^2.1342.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "formidable": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "html-pdf": "^3.0.1",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2",
+    "mysql2": "^3.4.0",
     "node-cache": "^5.1.2",
     "node-cron": "^3.0.2",
     "node-localstorage": "^2.2.1",
-    "request": "^2.88.2",
-    "socket.io": "^4.6.1"
+    "sequelize": "^6.32.1",
+    "socket.io": "^4.7.1",
+    "uuid": "^9.0.0",
+    "winston": "^3.9.0",
+    "xlsx": "^0.18.5"
   }
 }
