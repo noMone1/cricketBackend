@@ -3,7 +3,7 @@ const Joi = require('joi');
 const createUserSchema = Joi.object({
   title: Joi.string().optional(),
   name: Joi.string().required(),
-  gender: Joi.string().valid('male', 'female', 'other').required(),
+  gender: Joi.string().valid('male', 'female', 'other').optional(),
   designation: Joi.string().optional(),
   email: Joi.string().email().required(),
   phone: Joi.string().optional(),
