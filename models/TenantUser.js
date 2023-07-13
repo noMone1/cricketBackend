@@ -5,7 +5,7 @@ const companyEmployee = new Schema(
   {
     title: { type: String, required: false },
     name: { type: String, required: false },
-    gender: { type: String, required: true,enum:["male","female","other"] },
+    gender: { type: String, required: false,enum:["male","female","other"] },
     dateOfJoining:{type:Date, required: false, default: new Date()},
     designation:{type:String, required:false},
     email: { type: String, required: true,unique: true },
@@ -21,7 +21,7 @@ const companyEmployee = new Schema(
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
   }
 );
-companyEmployee.index({ employee_id: 1,userRefAccount:1 }, { unique: true });
+// companyEmployee.index({ employee_id: 1,userRefAccount:1 }, { unique: true });
 
 const User = model("TenantUser", companyEmployee);
 module.exports = User;
