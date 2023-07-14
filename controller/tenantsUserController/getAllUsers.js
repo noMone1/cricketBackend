@@ -1,5 +1,6 @@
 const CompanyEmployee = require("../../models/TenantUser");
 const { createUserSchema } = require("../../validations/tenantUser");
+const ObjectId = require("mongoose").Types.ObjectId;
 const getEmployees = async (req, res) => {
   const start = req.query.start || 0;
   const limit = req.query.limit || 10;
@@ -8,9 +9,9 @@ const getEmployees = async (req, res) => {
   
   if (req.query.search) {
     query.$or = [];
-    query.$or.push({ firstName: { $regex: req.query.search, $options: "i" } });
-    query.$or.push({ lastName: { $regex: req.query.search, $options: "i" } });
+    query.$or.push({ name: { $regex: req.query.search, $options: "i" } });
     query.$or.push({ email: { $regex: req.query.search, $options: "i" } });
+    query.$or.push({ id: { $regex: req.query.search, $options: "i" } });
   }
   const { status, employee_id } = req.query;
   if (status) {
@@ -19,8 +20,7 @@ const getEmployees = async (req, res) => {
   if (employee_id) {
     query.employee_id = employee_id;
   }
-  query.userRefAccount = req.user.userId;
-  
+  query.userRefAccount = new ObjectId(req.user.userId);
   try {
     const users = await CompanyEmployee.find(query).skip(start).limit(limit);
     const totalCount = await CompanyEmployee.countDocuments(query);
