@@ -22,7 +22,7 @@ const login = async (req, res) => {
     // Create an access token with the user's ID as the payload
     const accessToken =await  generateToken(user,api_secret);
       logger.info(` user ${user._id} logged in successfully ${new Date()}`);
-    res.status(200).json({ message: "success", accessToken });
+    res.status(200).json({ message: "success", accessToken,user });
   } catch (error) {
     console.error(error);
     
